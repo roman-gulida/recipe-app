@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Recipe Recommender</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAV -->
+    <nav class="sidebar">
+      <div class="brand">RecipeApp</div>
+      <ul>
+        <li>
+          <a href="#" data-page="all-recipes" class="nav-link">All Recipes</a>
+        </li>
+        <li><a href="#" data-page="xsl-view" class="nav-link">XSL View</a></li>
+        <li>
+          <a href="#" data-page="recommend" class="nav-link">Recommendations</a>
+        </li>
+        <li>
+          <a href="#" data-page="by-cuisine" class="nav-link"
+            >Browse by Cuisine</a
+          >
+        </li>
+        <li>
+          <a href="#" data-page="add-recipe" class="nav-link">Add Recipe</a>
+        </li>
+        <li><a href="#" data-page="add-user" class="nav-link">Add User</a></li>
+        <li><a href="#" data-page="users" class="nav-link">Users</a></li>
+        <li><a href="#" data-page="scraper" class="nav-link">Scraper</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <!-- ALL RECIPES -->
+      <section id="page-all-recipes" class="page">
+        <div class="page-header">
+          <h1>All Recipes</h1>
+          <input
+            type="text"
+            id="recipe-search"
+            class="search-input"
+            placeholder="Search recipes…"
+          />
+        </div>
+        <div id="recipes-container" class="card-grid"></div>
+      </section>
+
+      <!-- XSL VIEW -->
+      <section id="page-xsl-view" class="page">
+        <div class="page-header">
+          <h1>XSL Recipe View</h1>
+        </div>
+        <div class="filter-bar">
+          <label
+            >Select User:
+            <select id="xsl-user-select"></select>
+          </label>
+          <button class="btn btn-primary" onclick="loadXslView()">
+            Load XSL View
+          </button>
+        </div>
+        <div class="xsl-legend">
+          <span class="legend-match">Matches user's skill level</span>
+          <span class="legend-other">Other difficulty</span>
+        </div>
+        <div id="xsl-output"></div>
+      </section>
+
+      <!-- RECOMMENDATIONS -->
+      <section id="page-recommend" class="page">
+        <h1>Recommendations</h1>
+        <div id="first-user-card" class="user-card-large"></div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="loadRecommend('skill', this)">
+            By Skill Level
+          </button>
+          <button
+            class="tab-btn"
+            onclick="loadRecommend('skill-and-cuisine', this)"
+          >
+            Skill + Preferred Cuisine
+          </button>
+        </div>
+        <div id="recommend-output" class="card-grid"></div>
+      </section>
+
+      <!-- BY CUISINE -->
+      <section id="page-by-cuisine" class="page">
+        <h1>Browse by Cuisine</h1>
+        <div class="cuisine-buttons" id="cuisine-buttons"></div>
+        <div id="cuisine-output" class="card-grid"></div>
+      </section>
+
+      <!-- ADD RECIPE -->
+      <section id="page-add-recipe" class="page">
+        <h1>Add New Recipe</h1>
+        <div class="form-card">
+          <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="r-title" placeholder="Mushroom Risotto" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Cuisine Type 1 *</label>
+              <select id="r-cuisine1"></select>
+            </div>
+            <div class="form-group">
+              <label>Cuisine Type 2 *</label>
+              <select id="r-cuisine2"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Difficulty Level *</label>
+            <div class="radio-group" id="r-difficulty-group"></div>
+          </div>
+          <div id="r-error" class="alert alert-error hidden"></div>
+          <div id="r-success" class="alert alert-success hidden"></div>
+          <button class="btn btn-primary" onclick="submitRecipe()">
+            Save Recipe
+          </button>
+        </div>
+      </section>
+
+      <!-- ADD USER -->
+      <section id="page-add-user" class="page">
+        <h1>Add New User</h1>
+        <div class="form-card">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" id="u-name" placeholder="Jon" />
+            </div>
+            <div class="form-group">
+              <label>Surname *</label>
+              <input type="text" id="u-surname" placeholder="Jones" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Cooking Skill Level *</label>
+            <div class="radio-group" id="u-skill-group"></div>
+          </div>
+          <div class="form-group">
+            <label>Preferred Cuisine *</label>
+            <select id="u-cuisine"></select>
+          </div>
+          <div id="u-error" class="alert alert-error hidden"></div>
+          <div id="u-success" class="alert alert-success hidden"></div>
+          <button class="btn btn-primary" onclick="submitUser()">
+            Save User
+          </button>
+        </div>
+      </section>
+
+      <!-- USERS LIST -->
+      <section id="page-users" class="page">
+        <h1>Users</h1>
+        <div id="users-container" class="card-grid"></div>
+      </section>
+
+      <!-- SCRAPER -->
+      <section id="page-scraper" class="page">
+        <h1>Recipes Scraper</h1>
+        <div class="form-card">
+          <div class="form-group">
+            <label>URL</label>
+            <input
+              type="text"
+              id="scrape-url"
+              value="https://www.bbcgoodfood.com/recipes/collection/budget-autumn"
+              disabled
+            />
+          </div>
+          <button class="btn btn-primary" onclick="runScraper()">
+            Scrape & Add
+          </button>
+          <div id="scrape-result" class="mt-1"></div>
+        </div>
+      </section>
+
+      <!-- RECIPE DETAIL MODAL -->
+      <div
+        id="modal-overlay"
+        class="modal-overlay hidden"
+        onclick="closeModal()"
+      >
+        <div class="modal" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal()">✕</button>
+          <div id="modal-content"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

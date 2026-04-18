@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipeData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="recipes.xsd">
+
+    <recipes>
+        <recipe id="r001">
+            <title>Pumpkin Soup with Crusty Bread</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r002">
+            <title>Beef and Root Vegetable Stew</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>French</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r003">
+            <title>Mushroom Risotto</title>
+            <cuisine1>Italian</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r004">
+            <title>Spiced Butternut Squash Curry</title>
+            <cuisine1>Indian</cuisine1>
+            <cuisine2>Asian</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r005">
+            <title>Sausage and Bean Casserole</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>American</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r006">
+            <title>Slow-Cooked Lamb Shoulder</title>
+            <cuisine1>Middle Eastern</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Advanced</difficulty>
+        </recipe>
+        <recipe id="r007">
+            <title>Chicken and Leek Pie</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>French</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r008">
+            <title>Pasta e Fagioli</title>
+            <cuisine1>Italian</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r009">
+            <title>Vegetable Tagine with Couscous</title>
+            <cuisine1>Middle Eastern</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r010">
+            <title>Lentil Dahl with Naan</title>
+            <cuisine1>Indian</cuisine1>
+            <cuisine2>Asian</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r011">
+            <title>Beef Bourguignon</title>
+            <cuisine1>French</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Advanced</difficulty>
+        </recipe>
+        <recipe id="r012">
+            <title>Toad in the Hole</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>American</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r013">
+            <title>Ramen Noodle Soup</title>
+            <cuisine1>Japanese</cuisine1>
+            <cuisine2>Asian</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r014">
+            <title>Chilli Con Carne</title>
+            <cuisine1>Mexican</cuisine1>
+            <cuisine2>American</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r015">
+            <title>Roasted Root Vegetable Tart</title>
+            <cuisine1>French</cuisine1>
+            <cuisine2>British</cuisine2>
+            <difficulty>Advanced</difficulty>
+        </recipe>
+        <recipe id="r016">
+            <title>Pork and Apple Hotpot</title>
+            <cuisine1>British</cuisine1>
+            <cuisine2>French</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r017">
+            <title>Sweet Potato and Chickpea Stew</title>
+            <cuisine1>Middle Eastern</cuisine1>
+            <cuisine2>Indian</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r018">
+            <title>Miso-Glazed Salmon</title>
+            <cuisine1>Japanese</cuisine1>
+            <cuisine2>Asian</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+        <recipe id="r019">
+            <title>Stuffed Bell Peppers with Rice</title>
+            <cuisine1>Mediterranean</cuisine1>
+            <cuisine2>Italian</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r020">
+            <title>Duck Confit with Lentils</title>
+            <cuisine1>French</cuisine1>
+            <cuisine2>Mediterranean</cuisine2>
+            <difficulty>Advanced</difficulty>
+        </recipe>
+        <recipe id="r021">
+            <title>Black Bean Tacos</title>
+            <cuisine1>Mexican</cuisine1>
+            <cuisine2>American</cuisine2>
+            <difficulty>Beginner</difficulty>
+        </recipe>
+        <recipe id="r022">
+            <title>Chicken Tikka Masala</title>
+            <cuisine1>Indian</cuisine1>
+            <cuisine2>British</cuisine2>
+            <difficulty>Intermediate</difficulty>
+        </recipe>
+    </recipes>
+
+    <users>
+        <user id="u001">
+            <name>Jon</name>
+            <surname>Jones</surname>
+            <skillLevel>Intermediate</skillLevel>
+            <preferredCuisine>Italian</preferredCuisine>
+        </user>
+    </users>
+
+</recipeData>

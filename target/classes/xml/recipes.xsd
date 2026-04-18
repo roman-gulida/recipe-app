@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="recipeData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="recipes" type="RecipesType"/>
+                <xs:element name="users" type="UsersType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="RecipesType">
+        <xs:sequence>
+            <xs:element name="recipe" type="RecipeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RecipeType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="cuisine1" type="CuisineType"/>
+            <xs:element name="cuisine2" type="CuisineType"/>
+            <xs:element name="difficulty" type="DifficultyType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="UsersType">
+        <xs:sequence>
+            <xs:element name="user" type="UserType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UserType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="skillLevel" type="DifficultyType"/>
+            <xs:element name="preferredCuisine" type="CuisineType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="DifficultyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Beginner"/>
+            <xs:enumeration value="Intermediate"/>
+            <xs:enumeration value="Advanced"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CuisineType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Italian"/>
+            <xs:enumeration value="Asian"/>
+            <xs:enumeration value="Mexican"/>
+            <xs:enumeration value="French"/>
+            <xs:enumeration value="British"/>
+            <xs:enumeration value="Mediterranean"/>
+            <xs:enumeration value="American"/>
+            <xs:enumeration value="Indian"/>
+            <xs:enumeration value="Middle Eastern"/>
+            <xs:enumeration value="Japanese"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
